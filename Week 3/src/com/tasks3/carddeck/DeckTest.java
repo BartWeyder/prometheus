@@ -9,8 +9,13 @@ import java.lang.reflect.Array;
  */
 public class DeckTest {
     public static void main (String args[]) {
-        int[] stop = new int[12];
-        for (int i=0; i<13; i++)
-            stop[i] = i;
+        DeckMassive test = new DeckMassive();
+        Card test_card;
+        test.shuffle();
+        test.order();
+        for (int i = 0; i<36; i++) {
+            test_card = test.drawOne();
+            System.out.println("Card "+(i+1)+": Suit: "+test_card.getSuit().getName() + " Rank: "+test_card.getRank().getName());
+        }
     }
 }
